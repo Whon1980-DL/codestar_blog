@@ -4,12 +4,14 @@ from .models import Post
 
 
 # Create your views here.
+# This is a class base view
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
     template_name = "blog/index.html"
     paginate_by = 6
 
 
+# This is a function base view
 def post_detail(request, slug):
     """
     Display an individual :model:`blog.Post`.
